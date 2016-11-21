@@ -1,7 +1,9 @@
-const express 		= require('express');
-const mongoose 		= require('mongoose');
-const cors 			= require('cors');
-const bodyParser 	= require('body-parser');
+const express 			= require('express');
+const mongoose 			= require('mongoose');
+const cors 				= require('cors');
+const bodyParser 		= require('body-parser');
+const cookieParser 		= require('cookie-parser');
+const expressSession 	= require('express-session');
 
 const app 			= express();
 

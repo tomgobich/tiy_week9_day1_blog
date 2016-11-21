@@ -107,7 +107,7 @@ gulp.task('fonts', () => {
 gulp.task('serve', () => {
   browserSync.init({
     files: [siteRoot + '/**'],
-    port: 3000,
+    port: 5000,
     server: {
       baseDir: siteRoot
     }
@@ -143,16 +143,22 @@ gulp.task('finished', function() {
 // --------------------------------------------------
 // Build Sequences
 // --------------------------------------------------
-gulp.task('build', ['css', 'images', 'babel', 'html', 'fonts', 'serve']);
-
-
-
-gulp.task('default', function(callback) {
-  	runSequence(
-	    'clean:dist',
-	    ['build'],
-		'bundle',
-		'finished',
-	    callback
-	)
+gulp.task('build', function(callback) {
+	// ['css', 'images', 'babel', 'html', 'fonts', 'serve']
+	runSequence(
+				'clean:dist',
+				'css',
+				'babel',
+				'bundle',
+				'html',
+				'images',
+				'fonts',
+				'serve',
+				'finished',
+				callback
+		)
 });
+
+
+
+gulp.task('default', ['build']);
