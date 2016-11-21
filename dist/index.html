@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mongo's Mango Blog</title>
+
+	<!-- Bootstrap Styles -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+
+	<!-- Site Styles -->
+	<link rel="stylesheet" type="text/css" href="css/main-bundle.css">
+
+	<!-- Font(s) -->
+	<link href="https://fonts.googleapis.com/css?family=Bitter|Raleway" rel="stylesheet">
+
+</head>
+<body ng-cloak>
+
+	<!--
+		Header
+	-->
+	<header class="header">
+	  	<h1 class="headline" ui-sref="home">Mongo's Mango Blog</h1>
+		<ul class="header-subnav">
+			<li><a ui-sref="home" ui-sref-active="is-active">Home</a></li>
+			<li><a ui-sref="addNew" ui-sref-active="is-active">Post New Blog</a></li>
+			<li><a target="_blank" href="#">View Repo</a></li>
+		</ul>
+	</header>
+	<!-- /header -->
+
+	<!--
+		Main Body Container
+	-->
+	<div class="container main-body">
+		<div class="row">
+			<main ui-view></main>
+		</div>
+	</div>
+	<!-- /.container -->
+
+	<!--
+		Footer
+	-->
+	<footer class="container-fluid">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<p class="copyright">&copy; 2016 Tom Gobich | TIY Week 9 Day 1 Assignment at The Iron Yard</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- /footer -->
+
+	<!-- Angular 1.5.8 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.js"></script>
+
+	<!-- UI Router -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Lodash -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.2/lodash.min.js"></script>
+
+	<!-- Boostrap & Tether -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+
+	<!-- Moment -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
+
+	<!-- Main JavaScript File -->
+	<script src="js/main-bundle.js"></script>
+	<script src="js/factories.js"></script>
+	<script src="js/controllers.js"></script>
+
+</body>
+</html>

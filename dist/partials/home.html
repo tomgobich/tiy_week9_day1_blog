@@ -1,0 +1,10 @@
+<div class="col-xs-12 col-md-8 offset-md-2 blog-list">
+	<div class="blog"
+		 ng-repeat="blog in controller.blogList"
+		 ui-sref="blog({ id: blog._id })">
+		<h3>{{ blog.title }}</h3>
+		<h5>Posted: {{ blog.date | moment}}</h5>
+		<h5>Comments: {{ blog._comments.length }}</h5>
+		<p>{{ blog.blog }}</p>
+	</div>
+</div>

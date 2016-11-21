@@ -1,0 +1,330 @@
+@import 'bourbon/bourbon';
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+$color-background: 		#E7E7E7;
+$color-alt-background: 	#25373D;
+$color-border: 			#DDD;
+$color-link: 			#25373D;
+$color-text: 			darken($color-alt-background, 6);
+$color-text-light: 		#767676;
+$color-success: 		#75C759;
+$color-error:			#DA4453;
+
+$border-radius-small: 3px;
+$border-radius-large: 6px;
+
+$transition: all .35s ease-in-out;
+
+$font-family-heading: 'Bitter', serif;
+$font-family-body: 'Raleway', sans-serif;
+
+
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+@mixin clearAfter() {
+	content:"";
+    display:table;
+    clear:both;
+}
+
+@mixin displayInlineBlock() {
+	display: inline-block;
+	vertical-align: top;
+}
+
+@mixin boxShadow() {
+	box-shadow: 1px 1px 3px rgba($color-background, .2);
+}
+
+@mixin borderRadius($border-radius) {
+	-webkit-border-radiu: $border-radius;
+	  -moz-border-radius: $border-radius;
+		   border-radius: $border-radius;
+}
+
+
+
+// --------------------------------------------------
+// Global Styles
+// --------------------------------------------------
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	font-size: 14px;
+	font-family: $font-family-body;
+    background-color: $color-background;
+	color: $color-text;
+	overflow-x: hidden;
+}
+
+a {
+	color: $color-link;
+
+	&:hover {
+		color: $color-link;
+	}
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-family-heading;
+	line-height: 1.6em;
+}
+
+img {
+	max-width: 100%;
+}
+
+button {
+	background-color: $color-alt-background;
+	color: $color-background;
+	transition: background-color .3s ease;
+
+	&:hover {
+		background-color: lighten($color-alt-background, 8);
+	}
+}
+
+.copyright {
+	color: rgba(0, 0, 0, 0.4);
+	text-align: center;
+	margin-top: 40px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+main {
+
+    &.ng-enter {
+        transition: .5s;
+        transform: translateY(1000px);
+		opacity: 0;
+		z-index: 10;
+    }
+
+    &.ng-enter-active {
+		transform: translateY(0px);
+        opacity: 1;
+		z-index: 10;
+    }
+
+	&.ng-leave {
+		transition: .5s;
+		position: relative;
+		transform: translateY(0px);
+		opacity: 1;
+		z-index: -10;
+	}
+
+	&.ng-leave-active {
+		transform: translateY(1000px);
+		opacity: 0;
+		z-index: -10;
+	}
+}
+
+
+
+// --------------------------------------------------
+// Header Styles
+// --------------------------------------------------
+@import '_header.scss';
+
+
+
+// --------------------------------------------------
+// Footer Styles
+// --------------------------------------------------
+@import '_footer.scss';
+
+
+
+// --------------------------------------------------
+// Home Styles
+// --------------------------------------------------
+.blog-list {
+	padding-top: 40px;
+
+	.blog {
+		background-color: rgba(255, 255, 255, 0.25);
+		padding: 10px;
+		border-bottom: 3px solid rgba($color-alt-background, 0.4);
+		cursor: pointer;
+		transition: $transition;
+
+		&:hover {
+			background-color: rgba(255, 255, 255, 0.4);
+			border-bottom: 3px solid rgba($color-alt-background, 1);
+		}
+
+		h3 {
+			text-transform: capitalize;
+			margin: 0 0 5px;
+		}
+
+		h5 {
+			font-size: 1em;
+			font-style: italic;
+			text-transform: capitalize;
+			color: rgba(0, 0, 0, 0.6);
+			display: inline-block;
+			vertical-align: top;
+			padding-right: 20px;
+			margin: 0 0 5px;
+		}
+
+		p {
+			max-height: 62px;
+			color: $color-text;
+			overflow: hidden;
+		}
+	}
+}
+
+
+
+// --------------------------------------------------
+// Blog Styles
+// --------------------------------------------------
+.blog {
+	padding-top: 40px;
+
+	h1 {
+		font-size: 3em;
+		text-transform: capitalize;
+		margin: 0 0 5px;
+	}
+
+	h5 {
+		font-size: 1em;
+		font-style: italic;
+		text-transform: capitalize;
+		color: rgba(0, 0, 0, 0.6);
+		display: inline-block;
+		vertical-align: top;
+		padding-right: 20px;
+		margin: 0 0 5px;
+	}
+
+	p {
+		color: $color-text;
+		overflow: hidden;
+	}
+
+	.blog-content {
+		font-size: 1.4em;
+		padding: 20px 0;
+	}
+
+	.comment-list {
+		padding-top: 40px;
+
+		.comment-text {
+			width: 100%;
+			min-height: 60px;
+			padding: 5px 10px;
+			background-color: darken($color-background, 4);
+			color: $color-text;
+			border: none;
+			border-radius: 4px;
+			outline: none;
+			border: 1px solid darken($color-background, 4);
+			@include boxShadow();
+
+			&.ng-dirty {
+				&.ng-invalid {
+					background-color: rgba($color-error, .1);
+					border: 1px solid $color-error;
+				}
+			}
+		}
+
+		.comment {
+			padding: 10px;
+			border-bottom: 3px solid rgba($color-alt-background, 0.4);
+
+			&:nth-child(even) {
+				background-color: rgba(255, 255, 255, 0.25);
+			}
+
+			.comment-user {
+				font-size: 0.8em;
+			}
+		}
+
+		.add-comment {
+			padding: 20px 0 0;
+		}
+	}
+}
+
+
+
+// --------------------------------------------------
+// Add User Styles
+// --------------------------------------------------
+.blog-post {
+	padding-top: 40px;
+
+	.input-label,
+	.blog-label {
+		display: block;
+		padding: 20px 0 5px;
+		margin: 0;
+	}
+
+	.input-text,
+	.blog-text {
+		width: 100%;
+		padding: 5px 10px;
+		background-color: darken($color-background, 4);
+		color: $color-text;
+		border: none;
+		border-radius: 4px;
+		outline: none;
+		border: 1px solid darken($color-background, 4);
+		@include boxShadow();
+
+		&.ng-dirty {
+			&.ng-invalid {
+				background-color: rgba($color-error, .1);
+				border: 1px solid $color-error;
+			}
+		}
+	}
+
+	.blog-text {
+		height: 400px;
+	}
+
+	.btn-post {
+		display: block;
+		padding: 10px 30%;
+		margin: 20px auto 0;
+	}
+}
+
+
+
+// --------------------------------------------------
+// Responsive Styles
+// --------------------------------------------------
+@import '_responsive.scss';
