@@ -22,8 +22,6 @@
 			blogPromise.then(function (response) {
 				// Target needed data
 				vm.blog = response.data;
-
-				console.log(vm.blog);
 			});
 		};
 
@@ -44,7 +42,6 @@
 
 				// Once returned...
 				newCommentPromise.then(function (response) {
-					console.log(response);
 					// Response status 200?
 					if (response.status === 200) {
 						// Yes, update local data
