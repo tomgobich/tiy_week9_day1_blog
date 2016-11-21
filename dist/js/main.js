@@ -27,6 +27,11 @@
 			templateUrl: 'partials/add-post.html',
 			controller: 'CAddPost',
 			controllerAs: 'controller'
+		}).state('login', {
+			url: '/login',
+			templateUrl: 'partials/login.html',
+			controller: 'CLogin',
+			controllerAs: 'controller'
 		});
 	}
 })();

@@ -17,8 +17,8 @@ $border-radius-large: 6px;
 
 $transition: all .35s ease-in-out;
 
-$font-family-heading: 'Raleway', sans-serif;
-$font-family-body: Helvetica, Arial, sans-serif;
+$font-family-heading: 'Roboto Slab', serif;
+$font-family-body: 'Roboto', sans-serif;
 
 
 
@@ -161,9 +161,11 @@ main {
 // Home Styles
 // --------------------------------------------------
 .blog-list {
+	width: 100%;
 	padding-top: 40px;
 
 	.blog {
+		width: 100%;
 		background-color: rgba(255, 255, 255, 0.25);
 		padding: 10px;
 		border-bottom: 3px solid rgba($color-alt-background, 0.4);
@@ -263,6 +265,10 @@ main {
 
 			&:nth-child(even) {
 				background-color: rgba(255, 255, 255, 0.25);
+			}
+
+			p {
+				margin: 0;
 			}
 
 			.comment-user {
