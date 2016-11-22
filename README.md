@@ -1,6 +1,6 @@
-# MongoDB & Mongoose User List
+# Blog Site Using MongoDB
 
-##### The Iron Yard - Week 8, Day 3
+##### The Iron Yard - Week 9, Day 1
 
 
 
